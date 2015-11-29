@@ -71,15 +71,21 @@
     <Compile Include="Assets\MyScript\Bezier.cs" />
     <Compile Include="Assets\MyScript\CamScroll2.cs" />
     <Compile Include="Assets\MyScript\ContactState.cs" />
+    <Compile Include="Assets\MyScript\DEMO_input.cs" />
     <Compile Include="Assets\MyScript\Material.cs" />
     <Compile Include="Assets\MyScript\MaterialList.cs" />
     <Compile Include="Assets\MyScript\NodeParentState.cs" />
     <Compile Include="Assets\MyScript\Title\CamScroll.cs" />
-    <Compile Include="Assets\MyScript\include.cs" />
+    <Compile Include="Assets\MyScript\Title\TitleTap.cs" />
     <Compile Include="Assets\MyScript\list_nameHolder.cs" />
-    <Compile Include="Assets\MyScript\sample\NodeBaseEditor.cs" />
-    <Compile Include="Assets\MyScript\sample\NodeEditor.cs" />
+    <Compile Include="Assets\MyScript\node\func.cs" />
+    <Compile Include="Assets\MyScript\node\include.cs" />
+    <Compile Include="Assets\MyScript\node\material_node.cs" />
+    <Compile Include="Assets\MyScript\peopleInput.cs" />
+    <Compile Include="Assets\MyScript\recipeTap.cs" />
     <Compile Include="Assets\MyScript\tapCheck.cs" />
+    <Compile Include="Assets\MyScript\timeline\lineMaker.cs" />
+    <Compile Include="Assets\MyScript\timeline\static_timebar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

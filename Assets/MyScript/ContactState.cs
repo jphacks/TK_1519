@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 
 public class ContactState : MonoBehaviour {
@@ -19,7 +18,7 @@ public class ContactState : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        linked = false;
+
 	}
 	
 	// Update is called once per frame
@@ -36,8 +35,8 @@ public class ContactState : MonoBehaviour {
 
     void DrawNodeCurve(Vector3 startPos, Vector3 endPos)
     {
-        Vector3 startTan = startPos + Vector3.right * 5;
-        Vector3 endTan = endPos + Vector3.left * 5;
+        Vector3 startTan = startPos + Vector3.right * 2;
+        Vector3 endTan = endPos + Vector3.left * 2;
 
         myBezier = new Bezier(startPos, startTan, endTan, endPos);
 

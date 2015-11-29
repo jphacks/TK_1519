@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEditor;
+using UnityEngine.Sprites;
+using UnityEngine.UI;
 
 public class tapCheck : MonoBehaviour {
 
@@ -13,6 +14,12 @@ public class tapCheck : MonoBehaviour {
     public Bezier myBezier;
     public LineRenderer lr;
 
+    public GameObject TimeLinePanel;
+    private float PanelBeginX;
+
+    public Color lineColor;
+    public Color[] setColor = new Color[4];
+
 	// Use this for initialization
 	void Start () {
         NodeMoveMode = SceneMoveMode = NodeJoinMode = false;
@@ -20,6 +27,15 @@ public class tapCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        MainCam.GetComponent<Camera>().orthographicSize -= scroll*2.5f;
+        if (MainCam.GetComponent<Camera>().orthographicSize <= 3) {
+            MainCam.GetComponent<Camera>().orthographicSize = 3f;
+        }else if (MainCam.GetComponent<Camera>().orthographicSize >= 7.5f)
+        {
+            MainCam.GetComponent<Camera>().orthographicSize = 7.5f;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -31,10 +47,35 @@ public class tapCheck : MonoBehaviour {
                 GameObject obj = aCollider2d.transform.gameObject;
                 Debug.Log(obj.name);
                 currentOBJ = obj;
-                if (obj.name == "contact_O"){
+                if (obj.name == "contact_O_inc")
+                {
                     NodeJoinMode = true;
                     lr.enabled = true;
-                }else{
+                    lineColor = setColor[1];
+                }
+                else if (obj.name == "contact_O_mat")
+                {
+                    NodeJoinMode = true;
+                    lr.enabled = true;
+                    lineColor = setColor[0];
+                }
+                else if (obj.name == "contact_O_func")
+                {
+                    NodeJoinMode = true;
+                    lr.enabled = true;
+                    lineColor = setColor[2];
+                }
+                else if (obj.name == "contact_I_func")
+                {
+
+                }
+                else if (obj.name == "contact_if") {
+                    NodeJoinMode = true;
+                    lr.enabled = true;
+                    lineColor = setColor[3];
+                }
+                else
+                {
                     NodeMoveMode = true;
                     objPos_begin = obj.transform.position;
                     mousePos_begin = Input.mousePosition;
@@ -44,6 +85,7 @@ public class tapCheck : MonoBehaviour {
                 objPos_begin = MainCam.transform.position;
                 mousePos_begin = Input.mousePosition;
                 SceneMoveMode = true;
+                PanelBeginX = TimeLinePanel.GetComponent<RectTransform>().position.x;
             }
         }else if (Input.GetMouseButtonUp(0)){
             if (NodeJoinMode)
@@ -53,7 +95,17 @@ public class tapCheck : MonoBehaviour {
                 if (bCollider2d)
                 {
                     GameObject upObj = bCollider2d.transform.gameObject;
-                    if (CanContact(currentOBJ, upObj) && upObj.name == "contact_I")
+                    if (CanContact(currentOBJ, upObj) && upObj.name == "contact_I_func")
+                    {
+                        currentOBJ.GetComponent<ContactState>().linked = true;
+                        currentOBJ.GetComponent<ContactState>().outputID = upObj.transform.parent.GetComponent<NodeParentState>().all_id;
+                        currentOBJ.GetComponent<ContactState>().LinkedTo = upObj;
+                    }else if (CanContact(currentOBJ, upObj) && upObj.name == "contact_if")
+                    {
+                        currentOBJ.GetComponent<ContactState>().linked = true;
+                        currentOBJ.GetComponent<ContactState>().LinkedTo = upObj;
+
+                    }else if(CanContact(currentOBJ, upObj) && upObj.name == "complete")
                     {
                         currentOBJ.GetComponent<ContactState>().linked = true;
                         currentOBJ.GetComponent<ContactState>().LinkedTo = upObj;
@@ -82,6 +134,11 @@ public class tapCheck : MonoBehaviour {
             Vector2 worldPos_begin = cameraToWolid(mousePos_begin);
             currentOBJ.transform.position = objPos_begin - (worldPos_now - worldPos_begin);
             currentOBJ.transform.position = new Vector3(currentOBJ.transform.position.x,currentOBJ.transform.position.y,-10f);
+
+            TimeLinePanel.GetComponent<RectTransform>().position 
+                = new Vector3(PanelBeginX + (mousePos_now.x - mousePos_begin.x), 
+                              TimeLinePanel.GetComponent<RectTransform>().position.y,
+                              TimeLinePanel.GetComponent<RectTransform>().position.z);
         }
 
     }
@@ -114,6 +171,7 @@ public class tapCheck : MonoBehaviour {
 
         int count = 51;
         lr.SetVertexCount(count);
+        lr.SetColors(lineColor,lineColor);
         for (int i = 0; i < count; i++) {
             lr.SetPosition(i, myBezier.GetPointAtTime(i * 0.02f));
         }
