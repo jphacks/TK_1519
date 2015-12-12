@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MyScript\Bezier.cs" />
+    <Compile Include="Assets\MyScript\Bezier_new.cs" />
     <Compile Include="Assets\MyScript\CamScroll2.cs" />
     <Compile Include="Assets\MyScript\ContactState.cs" />
     <Compile Include="Assets\MyScript\DEMO_input.cs" />

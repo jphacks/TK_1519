@@ -11,7 +11,7 @@ public class tapCheck : MonoBehaviour {
 
     public GameObject MainCam;
 
-    public Bezier myBezier;
+    public Bezier_new myBezier;
     public LineRenderer lr;
 
     public GameObject TimeLinePanel;
@@ -20,21 +20,24 @@ public class tapCheck : MonoBehaviour {
     public Color lineColor;
     public Color[] setColor = new Color[4];
 
+    GameObject bezObj;
+
 	// Use this for initialization
 	void Start () {
         NodeMoveMode = SceneMoveMode = NodeJoinMode = false;
-	}
+        bezObj = GameObject.Find("BezRet");
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         MainCam.GetComponent<Camera>().orthographicSize -= scroll*2.5f;
-        if (MainCam.GetComponent<Camera>().orthographicSize <= 3) {
-            MainCam.GetComponent<Camera>().orthographicSize = 3f;
-        }else if (MainCam.GetComponent<Camera>().orthographicSize >= 7.5f)
+        if (MainCam.GetComponent<Camera>().orthographicSize <= 4) {
+            MainCam.GetComponent<Camera>().orthographicSize = 4f;
+        }else if (MainCam.GetComponent<Camera>().orthographicSize >= 8.5f)
         {
-            MainCam.GetComponent<Camera>().orthographicSize = 7.5f;
+            MainCam.GetComponent<Camera>().orthographicSize = 8.5f;
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -113,7 +116,19 @@ public class tapCheck : MonoBehaviour {
                 }
             }
             else if (NodeMoveMode) {
+                if (currentOBJ.transform.position.y > 0)
+                {
+                    currentOBJ.transform.position = new Vector3(currentOBJ.transform.position.x,
+                                                                ((int)((currentOBJ.transform.position.y + 1.5) / 3)) * 3f,
+                                                                currentOBJ.transform.position.z);
+                }
+                else
+                {
+                    currentOBJ.transform.position = new Vector3(currentOBJ.transform.position.x,
+                                                                ((int)((currentOBJ.transform.position.y - 1.5) / 3)) * 3f,
+                                                                currentOBJ.transform.position.z);
 
+                }
             }
             NodeMoveMode = SceneMoveMode = NodeJoinMode = false;
             lr.enabled = false;
@@ -164,16 +179,18 @@ public class tapCheck : MonoBehaviour {
 
     void DrawNodeCurve(Vector3 startPos, Vector3 endPos)
     {
-        Vector3 startTan = startPos + Vector3.right * 5;
-        Vector3 endTan = endPos + Vector3.left * 5;
 
-        myBezier = new Bezier(startPos, startTan, endTan, endPos);
 
-        int count = 51;
+        myBezier = bezObj.GetComponent<Bezier_new>();
+        myBezier.SetPoint(startPos, endPos);
+
+        int count = 24;
+        lr.SetColors(lineColor, lineColor);
         lr.SetVertexCount(count);
-        lr.SetColors(lineColor,lineColor);
-        for (int i = 0; i < count; i++) {
-            lr.SetPosition(i, myBezier.GetPointAtTime(i * 0.02f));
+        lr.SetWidth(0.06f,0.06f);
+        for (int i = 0; i < count; i++)
+        {
+            lr.SetPosition(i, myBezier.GetPoint(i));
         }
         //Handles.DrawBezier(startPos, endPos, startTan, endTan, Color.cyan, null, 3);
     }

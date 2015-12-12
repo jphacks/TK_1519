@@ -59,10 +59,15 @@ public class func : MonoBehaviour
 
         //テキスト座標変換
         Vector3 TextScreenportPoint = MainCamera.WorldToScreenPoint(nodePosition);
+        //テキストサイズ指定
+        float zoomNum = GameObject.Find("Main Camera").GetComponent<Camera>().orthographicSize;
+        nameHolder.GetComponent<Text>().fontSize = (int)(120 / zoomNum);
+        valHolder.GetComponent<Text>().fontSize = (int)(120 / zoomNum);
         //Z座標指定
         TextScreenportPoint.z = 0f;
-        nameHolder.transform.position = TextScreenportPoint;
-        Vector3 valScreenPoint = new Vector3(TextScreenportPoint.x, TextScreenportPoint.y - 15, TextScreenportPoint.z);
+        Vector3 nameScreenPoint = new Vector3(TextScreenportPoint.x, TextScreenportPoint.y + 150/zoomNum, TextScreenportPoint.z);
+        nameHolder.transform.position = nameScreenPoint;
+        Vector3 valScreenPoint = new Vector3(TextScreenportPoint.x, TextScreenportPoint.y - 280/zoomNum, TextScreenportPoint.z);
         valHolder.transform.position = valScreenPoint;
 
         if (outputID >= 0)

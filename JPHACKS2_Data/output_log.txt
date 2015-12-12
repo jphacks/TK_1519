@@ -15,20 +15,20 @@ Loading C:\Users\BOLCOF\Documents\make3\JPHACKS\NodeTest\JPHACKS2_Data\Managed\U
 Platform assembly: C:\Users\BOLCOF\Documents\make3\JPHACKS\NodeTest\JPHACKS2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\BOLCOF\Documents\make3\JPHACKS\NodeTest\JPHACKS2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\BOLCOF\Documents\make3\JPHACKS\NodeTest\JPHACKS2_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.426 seconds
+- Completed reload, in  0.203 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\BOLCOF\Documents\make3\JPHACKS\NodeTest\JPHACKS2_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 40c8 -> priority: 1 
-  Thread -> id: 3d94 -> priority: 1 
+  Thread -> id: 2cbc -> priority: 1 
+  Thread -> id: 2458 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.848238 ms
+UnloadTime: 6.153675 ms
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 334.
-Total: 1.024724 ms (FindLiveObjects: 0.081698 ms CreateObjectMapping: 0.048033 ms MarkObjects: 0.842031 ms  DeleteObjects: 0.050907 ms)
+Total: 0.927013 ms (FindLiveObjects: 0.073898 ms CreateObjectMapping: 0.048444 ms MarkObjects: 0.761973 ms  DeleteObjects: 0.041465 ms)
 
 Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
  
@@ -163,10 +163,10 @@ Parent of RectTransform is being set with parent property. Consider using the Se
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 16.184164 ms
+UnloadTime: 16.675562 ms
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 717.
-Total: 0.893760 ms (FindLiveObjects: 0.113310 ms CreateObjectMapping: 0.053371 ms MarkObjects: 0.690129 ms  DeleteObjects: 0.034896 ms)
+Total: 1.025544 ms (FindLiveObjects: 0.149849 ms CreateObjectMapping: 0.056655 ms MarkObjects: 0.781269 ms  DeleteObjects: 0.035717 ms)
 
 Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
  
@@ -333,102 +333,6 @@ Parent of RectTransform is being set with parent property. Consider using the Se
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-complete
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_func
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_func
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_if
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_func
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_func
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_inc
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-contact_O_func
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
-
-Rect
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
